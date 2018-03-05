@@ -1,0 +1,6 @@
+FROM centos:latest
+
+RUN curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
+RUN sh bootstrap-salt.sh -M -N -X
+
+ENTRYPOINT salt-master
